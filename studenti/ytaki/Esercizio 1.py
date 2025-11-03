@@ -25,15 +25,3 @@ while risposta == "si":
     risposta = input("Vuoi continuare? (si/no): ")
 
 print("Fine programma")
-
-giorni = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
-mese1 = eval(input("Inserisci il primo mese: "))
-mese2 = eval(input("Inserisci il secondo mese: "))
-differenza = 0
-
-for i in range(1,13):
-    if(i> (mese1 - 1) and i< (mese2 + 1)):
-        differenza = differenza + giorni[i]
-
-print("La differenza dei giorni tra i due mesi è di", differenza)
