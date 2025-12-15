@@ -11,7 +11,7 @@ categorie: dict[str, str] = {
     "Monitor 4K": "Tecnologia",
     "Tavolo in legno": "Arredamento"
 }
-
+ 
 r=""
 while(r!="q"):
     print("\nProdotti:", prodotti)
