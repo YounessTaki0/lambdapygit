@@ -35,42 +35,65 @@ class Commerciale(Dipendente):
         return stipendio + (stipendio * (p / 100))
 
 
+class Azienda:
+    def __init__(self, dipendenti):
+        self.dipendenti = dipendenti
+
+    def totale_stipendi(self):
+        somma = 0
+        for dipendente in self.dipendenti:
+            somma += dipendente.stipendio(40)
+        return somma
+
+    def miglior_commerciale(self):
+        max = 0
+        nome = ""
+        for dipendente in self.dipendenti:
+            if type(dipendente) == Commerciale:
+                if dipendente.stipendio(40) > max:
+                    max += dipendente.stipendio(40)
+                    nome = dipendente.nome
+        return nome
+
+    def __str__(self):
+        boh = "\n-------------------\n"
+        for dipendente in self.dipendenti:
+            if type(dipendente) == Commerciale:
+                boh = boh + "Classe: Commerciale, " + str(dipendente) + "\n"
+            elif type(dipendente) == Dipendente:
+                boh = boh + "Classe: Dipendente, " + str(dipendente) + "\n"
+            elif type(dipendente) == Manager:
+                boh = boh + "Classe: Manager, " + str(dipendente) + "\n"
+        boh += "-------------------\n"
+        return boh
+
+
 manager = Manager("Giovanni", "Rossi", "abcdefg123", 20, 30)
 commerciale = Commerciale("Mario", "Rossi", "abcdefg123", 40)
 dipendente1 = Dipendente("Luigi", "Verdi", "abcdefg123", 20)
 dipendente2 = Dipendente("Luca", "Pelato", "abcdefg123", 20)
-print(dipendente1)
-print(f"Stipendio: {dipendente1.stipendio(20)}")
-print(dipendente1 > dipendente2)
-print(commerciale > manager)
-dipendenti = [manager, commerciale, dipendente1, dipendente2]
-
-
-def totale_stipendi():
-    somma = 0
-    for dipendente in dipendenti:
-        somma += dipendente.stipendio(40)
-    return somma
-
-
-print("Totale stipendi dei dipendenti:", f"{totale_stipendi():.0f}")
-
-
 commerciale1 = Commerciale("Mario", "Rossi", "abcdefg123", 40)
 commerciale2 = Commerciale("Luigi", "Verdi", "abcdefg123", 100)
 commerciale3 = Commerciale("Luca", "Pelato", "abcdefg123", 20)
 
-commerciali = [commerciale1, commerciale2, commerciale3]
+print(f"\n{dipendente1}")
+print(f"Stipendio: {dipendente1.stipendio(20)}")
+print(dipendente1 > dipendente2)
+print(commerciale > manager)
+
+dipendenti = [
+    manager,
+    commerciale,
+    dipendente1,
+    dipendente2,
+    commerciale1,
+    commerciale2,
+    commerciale3,
+]
+azienda1 = Azienda(dipendenti)
+
+print("\nAzienda1:", azienda1)
+print("Totale stipendi dei dipendenti:", f"{azienda1.totale_stipendi():.0f}")
 
 
-def miglior_commerciale():
-    max = 0
-    nome = ""
-    for commerciale in commerciali:
-        if commerciale.stipendio(40) > max:
-            max += commerciale.stipendio(40)
-            nome = commerciale.nome
-    return nome
-
-
-print("Miglior commerciale:", miglior_commerciale())
+print("Miglior commerciale:", azienda1.miglior_commerciale())
