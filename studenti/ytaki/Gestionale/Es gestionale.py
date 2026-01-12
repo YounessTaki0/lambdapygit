@@ -9,7 +9,7 @@ class Dipendente:
         return numero_ore * self.paga_oraria
 
     def __str__(self):
-        return f"Nome: {self.nome}, Cognome: {self.cognome}, CF: {self.codice_fiscale}, Paga Oraria: {self.paga_oraria}"
+        return f"Nome: {self.nome} | Cognome: {self.cognome} | CF: {self.codice_fiscale} | Paga Oraria: {self.paga_oraria}"
 
     def __gt__(self, dipendente2):
         return self.paga_oraria > dipendente2.paga_oraria
@@ -59,11 +59,11 @@ class Azienda:
         boh = "\n-------------------\n"
         for dipendente in self.dipendenti:
             if type(dipendente) == Commerciale:
-                boh = boh + "Classe: Commerciale, " + str(dipendente) + "\n"
+                boh = boh + "Classe: Commerciale | " + str(dipendente) + "\n"
             elif type(dipendente) == Dipendente:
-                boh = boh + "Classe: Dipendente, " + str(dipendente) + "\n"
+                boh = boh + "Classe: Dipendente | " + str(dipendente) + "\n"
             elif type(dipendente) == Manager:
-                boh = boh + "Classe: Manager, " + str(dipendente) + "\n"
+                boh = boh + "Classe: Manager | " + str(dipendente) + "\n"
         boh += "-------------------\n"
         return boh
 
