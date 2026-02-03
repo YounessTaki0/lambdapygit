@@ -1,0 +1,8 @@
+SUCCESS audio copy.mp3 --> ./Es file_sorter/Audio
+SUCCESS audio.mp3 --> ./Es file_sorter/Audio
+SUCCESS boh copy.mp4 --> ./Es file_sorter/Video
+SUCCESS boh.mp4 --> ./Es file_sorter/Video
+SUCCESS ciao copy.png --> ./Es file_sorter/Immagini
+ERRORE ciao.pngg --> Estensione non supportata
+SUCCESS sium copy.txt --> ./Es file_sorter/Documenti
+SUCCESS sium.txt --> ./Es file_sorter/Documenti

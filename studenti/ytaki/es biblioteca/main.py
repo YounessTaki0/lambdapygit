@@ -68,9 +68,6 @@ scaffale1 = Scaffale(10, "Storia", [libro1, libro2])
 scaffale2 = Scaffale(12, "Religione", [libro1, libro2])
 # print(scaffale1)
 scaffale3 = scaffale1 + scaffale2
-"""print(scaffale3)
-print(f"Numero libri: {len(scaffale3)}")
-print(scaffale1 == scaffale2)"""
 
 while True:
     print("\nDigita un numero per effettuare un operazione sulla libreria:")
@@ -138,3 +135,6 @@ while True:
                 scaffale3.cerca_libro(libro2)
     elif r == 0:
         break
+
+print(f"Numero libri: {len(scaffale3)}")
+print(scaffale1 == scaffale2)
